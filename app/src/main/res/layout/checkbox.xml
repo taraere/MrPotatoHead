@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/GridItem12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:orientation="vertical"
+                android:paddingBottom="0dp">
+
+    <CheckBox
+            android:id="@+id/grid_item_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="false"
+            android:layout_marginTop="0dp"
+            android:checked="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:onClick="checkboxClicked"
+            android:visibility="visible"/>
+</RelativeLayout>
