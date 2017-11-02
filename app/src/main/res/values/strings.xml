@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">MrPotatoHead</string>
+    <string name="app_name">Mr Potato Head</string>
+    <!--<string name="hello">Hello Mr Potato!</string>-->
+    <string name="checkboxArms">Arms</string>
+    <string name="checkboxLegs">Legs</string>
+    <string name="checkboxHat">Hat</string>
+    <string name="checkboxMustache">Mustache</string>
+    <string name="checkboxEyes">Eyes</string>
+    <string name="checkboxEyebrows">Eyebrows</string>
+    <string name="checkboxGlasses">Glasses</string>
+    <string name="checkboxNose">Nose</string>
+    <string name="checkboxShoes">Shoes</string>
+    <string name="checkboxMouth">Mouth</string>
+    <string name="checkboxEars">Ears</string>
 </resources>
