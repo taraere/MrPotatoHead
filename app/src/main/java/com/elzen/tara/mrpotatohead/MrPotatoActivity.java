@@ -26,8 +26,7 @@ public class MrPotatoActivity extends AppCompatActivity {
     }
 
     public void showCheckBoxes() {
-        final CheckBoxItem[] checkboxItemArray = createCheckboxItemArray();
-        final CheckBoxAdapter adapter = new CheckBoxAdapter(this, R.layout.checkbox, checkboxItemArray);
+        final CheckBoxAdapter adapter = new CheckBoxAdapter(this, R.layout.checkbox, checkboxItems);
 
         GridView gridView = new GridView(this);
         gridView.setAdapter(adapter);
@@ -50,11 +49,18 @@ public class MrPotatoActivity extends AppCompatActivity {
         checkboxItems[4] = new CheckBoxItem(4, R.id.eyes, "Eyes", true);
         checkboxItems[5] = new CheckBoxItem(5, R.id.glasses,  "Glasses");
         checkboxItems[6] = new CheckBoxItem(6, R.id.hat, "Hat");
-        checkboxItems[7] = new CheckBoxItem(7, R.id.mouth, "Mouth", true);
-        checkboxItems[8] = new CheckBoxItem(8, R.id.mustache, "Mustache");
+        checkboxItems[7] = new CheckBoxItem(7, R.id.mustache, "Mustache");
+        checkboxItems[8] = new CheckBoxItem(8, R.id.mouth, "Mouth", true);
         checkboxItems[9] = new CheckBoxItem(9, R.id.nose, "Nose");
 
         return checkboxItems;
+    }
+
+    //TODO save data (checked boxes and image states) from after popup and rotation of screen
+    //TODO CONTINUED iterate through checkbox states and update image visibility
+
+            public void viewClicked(View view) {
+        showCheckBoxes();
     }
 
     private static class OnItemClickListenerListViewItem implements OnItemClickListener {
@@ -91,6 +97,7 @@ public class MrPotatoActivity extends AppCompatActivity {
         }
 
         final CheckBoxItem checkBoxItem = checkboxItems[id];
+        checkBoxItem.setSelected(checked);
 
         final ImageView bodyPart = findViewById(checkBoxItem.imageId);
 

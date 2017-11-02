@@ -4,6 +4,7 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:onClick="viewClicked"
               android:backgroundTint="@color/colorPrimaryDark"
               android:weightSum="7"
               tools:context="com.elzen.tara.mrpotatohead.MrPotatoActivity" android:orientation="vertical">
@@ -14,10 +15,6 @@
     <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-        <!--TODO Remove repetitions-->
-        <!--TODO mouth on-top of mustache - in REVERSE-->
-        <!--TODO save data from after rotation of screen-->
 
         <ImageView
                 android:id="@+id/body"
@@ -118,7 +115,6 @@
                 android:layout_weight="7"
                 android:layout_gravity="center_horizontal">
 
-            <!--TODO: remove repetitions - put into Java-->
             <!--TODO: constrain within screen-->
 
             <CheckBox

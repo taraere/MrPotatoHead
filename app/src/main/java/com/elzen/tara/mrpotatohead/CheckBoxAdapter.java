@@ -41,7 +41,7 @@ public class CheckBoxAdapter extends ArrayAdapter<CheckBoxItem> {
         CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.grid_item_checkbox);
         checkBox.setText(objectItem.itemName);
         checkBox.setTag(objectItem.itemId);
-        checkBox.setSelected(objectItem.selected);
+        checkBox.setChecked(objectItem.selected);
 
         return convertView;
     }

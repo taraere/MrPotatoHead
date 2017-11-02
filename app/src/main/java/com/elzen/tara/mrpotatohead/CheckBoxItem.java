@@ -8,7 +8,7 @@ public class CheckBoxItem {
     final public int itemId;
     final public int imageId;
     final public String itemName;
-    final public boolean selected;
+    public boolean selected;
 
     public CheckBoxItem(int id, int imageId, String name) {
         this(id, imageId, name, false);
@@ -18,7 +18,11 @@ public class CheckBoxItem {
         this.itemId = id;
         this.imageId = imageId;
         this.itemName = name;
-        this.selected = false;
+        this.selected = selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 
 }
