@@ -5,7 +5,6 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:onClick="viewClicked"
-              android:backgroundTint="@color/colorPrimaryDark"
               android:weightSum="7"
               tools:context="com.elzen.tara.mrpotatohead.MrPotatoActivity" android:orientation="vertical">
 
@@ -94,7 +93,7 @@
                 app:srcCompat="@drawable/glasses"/>
 
         <TextView
-                android:text="Click on the check-boxes to put on or take off different parts of Mr Potato Head."
+                android:text="@string/greeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="viewEnd"

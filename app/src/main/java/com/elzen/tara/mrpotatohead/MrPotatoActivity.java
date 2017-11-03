@@ -38,6 +38,8 @@ public class MrPotatoActivity extends AppCompatActivity {
                 .show();
     }
 
+    //TODO button and sidebar
+
     public CheckBoxItem[] createCheckboxItemArray() {
 
         CheckBoxItem[] checkboxItems = new CheckBoxItem[10];
@@ -55,9 +57,6 @@ public class MrPotatoActivity extends AppCompatActivity {
 
         return checkboxItems;
     }
-
-    //TODO save data (checked boxes and image states) from after popup and rotation of screen
-    //TODO CONTINUED iterate through checkbox states and update image visibility
 
             public void viewClicked(View view) {
         showCheckBoxes();

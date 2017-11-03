@@ -12,4 +12,6 @@
     <string name="checkboxShoes">Shoes</string>
     <string name="checkboxMouth">Mouth</string>
     <string name="checkboxEars">Ears</string>
+    <string name="greeting">Tap the screen to return to check-boxes, and tap outside the popup window to
+    return to Mr Potato Head</string>
 </resources>
