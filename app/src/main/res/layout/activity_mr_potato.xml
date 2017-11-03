@@ -4,8 +4,7 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:onClick="viewClicked"
-              android:weightSum="7"
+              android:backgroundTint="@color/colorPrimaryDark"
               tools:context="com.elzen.tara.mrpotatohead.MrPotatoActivity" android:orientation="vertical">
 
     <!--TODO: add background colour-->
@@ -13,7 +12,10 @@
 
     <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
+
+        <!--TODO mouth on-top of mustache - in REVERSE-->
+        <!--TODO save data from after rotation of screen-->
 
         <ImageView
                 android:id="@+id/body"
@@ -92,102 +94,87 @@
                 android:visibility="invisible"
                 app:srcCompat="@drawable/glasses"/>
 
-        <TextView
-                android:text="@string/greeting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="viewEnd"
-                android:fontFamily="cursive"
-                android:includeFontPadding="true"
-                android:id="@+id/textView"/>
-
     </FrameLayout>
 
-    <!--<LinearLayout android:layout_width="match_parent"-->
-                  <!--android:weightSum="7"-->
-                  <!--android:layout_height="match_parent">-->
+    <GridView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:numColumns="auto_fit"
+            android:layout_gravity="center">
 
-        <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:columnCount="5"
-                android:layout_weight="7"
-                android:layout_gravity="center_horizontal">
+        <!--TODO: remove repetitions - put into Java-->
 
-            <!--TODO: constrain within screen-->
+        <CheckBox
+                android:id="@+id/checkboxEyes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:onClick="checkboxClicked"
+                android:text="@string/checkboxEyes"/>
 
-            <CheckBox
-                    android:id="@+id/checkboxEyes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:baselineAligned="false"
-                    android:onClick="checkboxClicked"
-                    android:text="@string/checkboxEyes"/>
+        <CheckBox
+                android:id="@+id/checkboxEars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkboxClicked"
+                android:text="@string/checkboxEars"/>
 
-            <CheckBox
-            android:id="@+id/checkboxEars"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxEars"/>
+        <CheckBox
+                android:id="@+id/checkboxEyebrows"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkboxClicked"
+                android:text="@string/checkboxEyebrows"/>
 
-            <CheckBox
-            android:id="@+id/checkboxEyebrows"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxEyebrows"/>
+        <CheckBox
+                android:id="@+id/checkboxGlasses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkboxClicked"
+                android:text="@string/checkboxGlasses"/>
 
-            <CheckBox
-            android:id="@+id/checkboxGlasses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxGlasses"/>
+        <CheckBox
+                android:id="@+id/checkboxArms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkboxClicked"
+                android:text="@string/checkboxArms"/>
 
-            <CheckBox
-            android:id="@+id/checkboxArms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxArms"/>
+        <CheckBox
+                android:id="@+id/checkboxHat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkboxClicked"
+                android:text="@string/checkboxHat"/>
 
-            <CheckBox
-            android:id="@+id/checkboxHat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxHat"/>
+        <CheckBox
+                android:id="@+id/checkboxMouth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkboxClicked"
+                android:text="@string/checkboxMouth"/>
 
-            <CheckBox
-            android:id="@+id/checkboxMustache"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxMustache"/>
+        <CheckBox
+                android:id="@+id/checkboxMustache"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkboxClicked"
+                android:text="@string/checkboxMustache"/>
 
-            <CheckBox
-            android:id="@+id/checkboxNose"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxNose"/>
+        <CheckBox
+                android:id="@+id/checkboxNose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkboxClicked"
+                android:text="@string/checkboxNose"/>
 
-            <CheckBox
-            android:id="@+id/checkboxShoes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxShoes"/>
-            <CheckBox
-                    android:id="@+id/checkboxMouth"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="checkboxClicked"
-                    android:text="@string/checkboxMouth"/>
+        <CheckBox
+                android:id="@+id/checkboxShoes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkboxClicked"
+                android:text="@string/checkboxShoes"/>
 
-        </GridLayout>
-    <!--</LinearLayout>-->
-
+    </GridView>
 
 </LinearLayout>
