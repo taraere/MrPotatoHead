@@ -72,18 +72,18 @@
                 app:srcCompat="@drawable/shoes"/>
 
         <ImageView
+            android:id="@+id/mouth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:srcCompat="@drawable/mouth"/>
+
+        <ImageView
                 android:id="@+id/mustache"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
-                app:srcCompat="@drawable/mustache"/>
-
-        <ImageView
-                android:id="@+id/mouth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:visibility="invisible"
-                app:srcCompat="@drawable/mouth"/>
+                app:srcCompat="@drawable/mustache"/>
 
         <ImageView
                 android:id="@+id/glasses"
@@ -115,76 +115,6 @@
                 android:layout_gravity="center_horizontal">
 
             <!--TODO: constrain within screen-->
-
-            <CheckBox
-                    android:id="@+id/checkboxEyes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:baselineAligned="false"
-                    android:onClick="checkboxClicked"
-                    android:text="@string/checkboxEyes"/>
-
-            <CheckBox
-            android:id="@+id/checkboxEars"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxEars"/>
-
-            <CheckBox
-            android:id="@+id/checkboxEyebrows"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxEyebrows"/>
-
-            <CheckBox
-            android:id="@+id/checkboxGlasses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxGlasses"/>
-
-            <CheckBox
-            android:id="@+id/checkboxArms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxArms"/>
-
-            <CheckBox
-            android:id="@+id/checkboxHat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxHat"/>
-
-            <CheckBox
-            android:id="@+id/checkboxMustache"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxMustache"/>
-
-            <CheckBox
-            android:id="@+id/checkboxNose"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxNose"/>
-
-            <CheckBox
-            android:id="@+id/checkboxShoes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkboxClicked"
-            android:text="@string/checkboxShoes"/>
-            <CheckBox
-                    android:id="@+id/checkboxMouth"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="checkboxClicked"
-                    android:text="@string/checkboxMouth"/>
 
         </GridLayout>
     <!--</LinearLayout>-->

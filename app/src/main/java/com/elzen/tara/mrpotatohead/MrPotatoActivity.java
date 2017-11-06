@@ -1,6 +1,7 @@
 package com.elzen.tara.mrpotatohead;
 
 import android.app.AlertDialog;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,18 +11,44 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class MrPotatoActivity extends AppCompatActivity {
 
-    AlertDialog alertDialogStores;
-    CheckBoxItem[] checkboxItems;
+    private static final String TAG_RETAINED_FRAGMENT = "DataFragment";
+
+    private DataFragment mDataFragment;
+    private CheckBoxItem[] checkboxItems;
+
+    private AlertDialog alertDialogStores;
+
 
     public MrPotatoActivity() {
-        checkboxItems = createCheckboxItemArray();
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mr_potato);
+
+        // find the retained fragment on activity restarts
+        FragmentManager fm = getFragmentManager();
+        mDataFragment = (DataFragment) fm.findFragmentByTag(TAG_RETAINED_FRAGMENT);
+
+        // create the fragment and data the first time
+        if (mDataFragment == null) {
+            // add the fragment
+            mDataFragment = new DataFragment();
+            fm.beginTransaction().add(mDataFragment, TAG_RETAINED_FRAGMENT).commit();
+            // load data from a data source or perform any calculation
+            mDataFragment.setCheckBoxItems(createCheckboxItemArray());
+        }
+
+        checkboxItems = mDataFragment.getCheckBoxItems();
+
+        // the data is available in mRetainedFragment.getData() even after
+        // subsequent configuration change restarts.
+
+        for (CheckBoxItem item : checkboxItems) {
+            checkChecked(item);
+        }
+
         showCheckBoxes();
     }
 
@@ -30,7 +57,7 @@ public class MrPotatoActivity extends AppCompatActivity {
 
         GridView gridView = new GridView(this);
         gridView.setAdapter(adapter);
-        gridView.setOnItemClickListener(new OnItemClickListenerListViewItem());
+//        gridView.setOnItemClickListener(new OnItemClickListenerListViewItem());
 
         alertDialogStores = new AlertDialog.Builder(MrPotatoActivity.this)
                 .setView(gridView)
@@ -58,31 +85,8 @@ public class MrPotatoActivity extends AppCompatActivity {
         return checkboxItems;
     }
 
-            public void viewClicked(View view) {
+    public void viewClicked(View view) {
         showCheckBoxes();
-    }
-
-    private static class OnItemClickListenerListViewItem implements OnItemClickListener {
-
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-            Context context = view.getContext();
-
-            CheckBox checkBox = ((CheckBox) view.findViewById(R.id.grid_item_checkbox));
-
-            // get the clicked item name
-            String listItemText = checkBox.getText().toString();
-
-            // get the clicked item ID
-            String listItemId = checkBox.getTag().toString();
-
-            // just toast it
-            Toast.makeText(context, "Item: " + listItemText + ", Item ID: " + listItemId, Toast.LENGTH_SHORT).show();
-
-            ((MrPotatoActivity) context).alertDialogStores.cancel();
-        }
-
     }
 
     public void checkboxClicked(View view) {
@@ -96,15 +100,20 @@ public class MrPotatoActivity extends AppCompatActivity {
         }
 
         final CheckBoxItem checkBoxItem = checkboxItems[id];
+
         checkBoxItem.setSelected(checked);
 
+        checkChecked(checkBoxItem);
+    }
+
+    private void checkChecked(CheckBoxItem checkBoxItem) {
         final ImageView bodyPart = findViewById(checkBoxItem.imageId);
 
-
-        if (checked) {
+        if (checkBoxItem.selected) {
             bodyPart.setVisibility(View.VISIBLE);
         } else {
             bodyPart.setVisibility(View.INVISIBLE);
         }
+
     }
 }
